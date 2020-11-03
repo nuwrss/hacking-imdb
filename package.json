@@ -1,0 +1,23 @@
+{
+  "name": "hacking-imdb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebAhead7/hacking-imdb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WebAhead7/hacking-imdb/issues"
+  },
+  "homepage": "https://github.com/WebAhead7/hacking-imdb#readme",
+  "dependencies": {
+    "supertest": "^6.0.0",
+    "tape": "^5.0.1"
+  }
+}
