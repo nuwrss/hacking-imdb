@@ -25,7 +25,7 @@ readFromData();
 
 function router(req, res) {
   const url = req.url;
-  console.log(arrayMovie);
+
   if (url === "/" && req.method === "GET") {
     readBody(req, res);
   } else {
