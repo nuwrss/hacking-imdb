@@ -11,9 +11,9 @@ The list is dynamically generated from a pre-populated list of values after you 
 - Just click to watch a movie any time
 
 # Built With
-HTML
-CSS
-JS
+- HTML
+- CSS
+- JS
 
 # Getting Started
 - In the main page there is a suggestion and popular movies that you can watch
