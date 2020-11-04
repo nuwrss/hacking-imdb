@@ -39,6 +39,7 @@ function readBody(request, response) {
   const data = new URLSearchParams(body);
   const name = data.get("name");
   
+  console.log("the name :" + name);
     let jsonStr = JSON.stringify(movieNames(name));
     response.writeHead(200, { "content-type": "application/json" });
     response.end(jsonStr);

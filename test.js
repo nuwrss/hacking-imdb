@@ -6,7 +6,7 @@ const supertest = require("supertest");
 test("check status code is 200", (t) => {
   supertest(router)
     .get("/")
-    .query({name:'a'})
+    .query()
     .expect(200)
     .expect("Content-Type", "application/json")
     .end((err, res) => {
