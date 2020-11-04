@@ -1,20 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/style.css">
-    <title>Imdb</title>
-  </head>
-  <body>
-    <div class="countiner">
 
-        <div class="search-div">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="src/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Imdb</title>
+</head>
 
-        <div class="logo">
-          <h1>Hacked Imdb</h1>
-        </div>
+<body>
+  <div class="countiner header">
+    <img src="src/img/logo5.png" class="logo">
+  </div>
 
+  <div class="movie-info">
+    <div class="row">
+      <div class="col-md-6 left-box">
+        <div class="search-bar">
+          <form autocomplete="off" >
+            <div class="autocomplete" style="width:300px;">
+              <input id="myInput" type="text" name="" placeholder="Search for a Movie ..">
+            </div>
+            <input type="submit">
+          </form>
+      </div>
+        <!-- <p>cast: </p>
+        <div class="casting">
+          <img src="src/img/revenant.jpg" title="Revenant">
+          <img src="src/img/panda.jpg" title="Kung Fu Panda">
+          <img src="src/img/king-arthur.jpg" title="King Arthur">
+          <img src="src/img/gladiator.jpg" title="Gladiator">
+          <img src="src/img/coco.jpg" title="Coco">
+        </div> -->
+<!-- 
           <div class="search-bar">
               <form autocomplete="off" >
                 <div class="autocomplete" style="width:300px;">
@@ -34,12 +54,41 @@
    <div class="movie-pic">
 
     <img src="src/img/Interstellar_film_poster.jpg" alt="">
-   </div>
+   </div> -->
 
+        <a href="#"><i class="fa fa-play"></i>Watch now</a>
+        <a href="#" class="download-btn"><i class="fa fa-arrow-down"></i>Download</a>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="src/img/jumanji.jpg" class="movie-img">
+      </div>
+    </div>
   </div>
+  <div class="container series">
+    <h3>Popular Movies</h3>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-6"><img src="src/img/the star.jpg"></div>
+          <div class="col-6"><img src="src/img/pixels.jpg"></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-6"><img src="src/img/jungle2.jpg"></div>
+          <div class="col-6"><img src="src/img/blabla.jpg"></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-6"><img src="src/img/beauty.jpg"></div>
+          <div class="col-6"><img src="src/img/home alone2.jpg"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="src/client.js"></script>
+  <script src="test.js"></script>
+</body>
 
-</div>
-<script src="src/client.js"></script>
-<script src="test.js"></script>
-  </body>
 </html>

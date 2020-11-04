@@ -1,8 +1,6 @@
- var MoviesArr = ["Da 5 Bloods","Never Rarely Sometimes Always","Tenet","Crip Camp",
-                    "I'm Thinking of Ending Things","The Irishman","Parasite","Avengers: Endgame",
-                    "The Farewell","Lord of the Rings","Toy Story","The Dark Knight","interstellar"];
+ 
 
-function autocomplete(inp, arr) {
+function autocomplete(inp) {
     var currentFocus;
     inp.addEventListener("input", function(e) {
         var a, b, i, val = this.value;
@@ -16,9 +14,11 @@ function autocomplete(inp, arr) {
         /*append the DIV element as a child of the autocomplete container:*/
         this.parentNode.appendChild(a);
         /*for each item in the array...*/
+         const arr =getMovieName(val);
         for (i = 0; i < arr.length; i++) {
           /*check if the item starts with the same letters as the text field value:*/
-          if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+
+          
             /*create a DIV element for each matching element:*/
             b = document.createElement("DIV");
             /*make the matching letters bold:*/
@@ -35,7 +35,7 @@ function autocomplete(inp, arr) {
                 closeAllLists();
             });
             a.appendChild(b);
-          }
+         
         }
     });
 
@@ -95,4 +95,14 @@ function autocomplete(inp, arr) {
   
   
   /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
-  autocomplete(document.getElementById("myInput"), MoviesArr);
+  autocomplete(document.getElementById("myInput"));
+
+function getMovieName(input){
+  fetch("/search?name="+input)
+.then(response => response.json())
+.then(
+  data => console.log(data)
+ 
+);
+}
+  
