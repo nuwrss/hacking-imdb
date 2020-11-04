@@ -25,7 +25,7 @@ readFromData();
 
 function router(req, res) {
   const url = req.url;
-  if (req.method === "GET") {
+  if (req.method === "GET" && url.includes("/search")) {
     readBody(req, res);
   } else {
     res.writeHead(404, { "content-type": "text/html" });
@@ -39,6 +39,7 @@ function readBody(request, response) {
   const data = new URLSearchParams(body);
   const name = data.get("name");
   
+  console.log("the name :" + name);
     let jsonStr = JSON.stringify(movieNames(name));
     response.writeHead(200, { "content-type": "application/json" });
     response.end(jsonStr);
@@ -46,7 +47,10 @@ function readBody(request, response) {
 }
 
 function movieNames(text) {
-  if (text.length === 0) {
+  if (text === null ) {
+    return [];
+  }
+  if(text.length === 0){
     return [];
   }
   const arr = arrayMovie.filter((movie) => {
