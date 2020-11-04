@@ -4,7 +4,8 @@
   "description": "",
   "main": "test.js",
   "scripts": {
-    "test": "node test.js | tap-spec"
+    "test": "node test.js | tap-spec",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
