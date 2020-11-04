@@ -25,7 +25,7 @@ readFromData();
 
 function router(req, res) {
   const url = req.url;
-  if (req.method === "GET") {
+  if (req.method === "GET" && url.includes("/seach")) {
     readBody(req, res);
   } else {
     res.writeHead(404, { "content-type": "text/html" });
