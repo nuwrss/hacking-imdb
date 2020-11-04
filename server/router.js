@@ -46,7 +46,10 @@ function readBody(request, response) {
 }
 
 function movieNames(text) {
-  if (text.length === 0) {
+  if (text === null ) {
+    return [];
+  }
+  if(text.length === 0){
     return [];
   }
   const arr = arrayMovie.filter((movie) => {
