@@ -1,62 +1,16 @@
-  *
-  {
-      margin: auto;
-      padding: 0;
-  }
-
-  body{
-        background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(img/IMAGE2.png);
+body{
+        background-image: url(/src/img/bg1.jpg);
         background-position: center;
         background-size: cover;
+        background-repeat: no-repeat;
+        
   }
 
-  .logo{
-      width: 150px;
-      margin-top: 18px;
-
-  }
-  .header{
-      height: 10%;
-  }
-  .header-btn{
-      text-decoration: none;
-      border-radius: 30px;
-      padding: 7px 20px;
-      float: right;
-      margin-top: 15px;
-      color: #ffffff;
-      background: #107afd;
-      font-weight: 600;
-  }
-  .topnav {
-    overflow: hidden;
-    background-color: #e9e9e9;
-  }
-  
-  /* Style the links inside the navigation bar */
-  .topnav a {
-    float: left;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  /* Style the "active" element to highlight the current page */
   .topnav a.active {
     background-color: #2196F3;
-    color: white;
+    color: black;
   }
   
-  /* Style the search box inside the navigation bar */
   .topnav input[type=text] {
     float: right;
     padding: 6px;
@@ -74,7 +28,7 @@
       text-align: left;
       width: 100%;
       margin: 0;
-      padding: 14px;
+      /* padding: 14px; */
     }
     .topnav input[type=text] {
       border: 1px solid #ccc;
@@ -85,7 +39,7 @@
       margin: 3% 0;
   }
   .left-box{
-      color: white;
+      color: black;
       margin: 15px 0;
       padding: 20px;
   }
@@ -111,7 +65,7 @@
       background: transparent;
   }
   .fa{
-      margin: 0 5px;
+      margin: 0 15px;
 
   }
   .movie-img{
@@ -127,11 +81,69 @@
       box-shadow: -4px 4px 5px 0 #000;
       cursor: pointer;
       transition: 1s;
+      justify-content:space-between ;
   }
-  .series img:hover{
+  /* .series img:hover{
       transform: translateY(-10px);
+  } */
+
+  .autocomplete {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  
   }
-
-
+  
+  input {
+    border: 1px solid transparent;
+    background-color: #f1f1f1;
+    padding: 10px;
+    font-size: 16px;
+    width: 10%;
+    border-radius: 10px;
+  }
+  
+  input[type=text] {
+    background-color: #f1f1f1;
+    width: 100%;
+  }
+  
+  input[type=submit] {
+    background-color: DodgerBlue;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /* position the autocomplete items to be the same width as the container: */
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+  
+  .autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff; 
+    border-bottom: 1px solid #d4d4d4; 
+    opacity: 0.80;
+  }
+  
+  /* when hovering an item: */
+  .autocomplete-items div:hover {
+    background-color: #e9e9e9; 
+  }
+  
+  /* when navigating through the items using the arrow keys: */
+  .autocomplete-active {
+    background-color: DodgerBlue !important; 
+    color: #ffffff; 
+  }
+  
 
   

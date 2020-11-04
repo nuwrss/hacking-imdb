@@ -37,12 +37,12 @@ function router(req, res) {
       }
     })
 
+  }else{
+  if (req.method === "GET" && url.includes("/search")) {
+    readBody(req, res);
   } else {
     if(url.includes("src")){
       filesHandlerIndex(req,res);
-    }else{
-    if (req.method === "GET" && url.includes("/search")) {
-      readBody(req, res);
     } else {
       res.writeHead(404, { "content-type": "text/html" });
       res.end("<h1>Not found!</h1>");
