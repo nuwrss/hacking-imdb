@@ -25,8 +25,7 @@ readFromData();
 
 function router(req, res) {
   const url = req.url;
-  console.log(arrayMovie);
-  if (url === "/" && req.method === "GET") {
+  if (req.method === "GET") {
     readBody(req, res);
   } else {
     res.writeHead(404, { "content-type": "text/html" });
@@ -35,18 +34,15 @@ function router(req, res) {
 }
 
 function readBody(request, response) {
-  let bodyBuilder = "";
-  // callback runs every time the stream has the next bit of data
-  request.on("data", (chunk) => {
-    bodyBuilder += chunk;
-  });
-  // callback runs when request finishes and we have all the data
-
-  request.on("end", () => {
-    let jsonStr = JSON.stringify(movieNames(bodyBuilder));
+  
+  const body = request.url.split("?")[1];
+  const data = new URLSearchParams(body);
+  const name = data.get("name");
+  
+    let jsonStr = JSON.stringify(movieNames(name));
     response.writeHead(200, { "content-type": "application/json" });
     response.end(jsonStr);
-  });
+  
 }
 
 function movieNames(text) {
