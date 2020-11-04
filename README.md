@@ -3,7 +3,9 @@ We introduce amazing site for movies, that you can choose any movie and watch it
 In this website enables users to quickly find and select words from a list of suggestions, as they type.
 The list is dynamically generated from a pre-populated list of values after you type in search icon.
 
-(http://url/to/img.png)
+<p align="center">
+  <img src="/src/img/Project.gif" width=720px height=360px />
+</p>
 
 # Features:
 - Search for movies.
