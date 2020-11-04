@@ -7,7 +7,6 @@
     "test": "node test.js | tap-spec",
     "start": "node ./server/server.js",
     "dev": "nodemon ./server/server.js"
-
   },
   "repository": {
     "type": "git",
