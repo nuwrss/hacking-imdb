@@ -25,6 +25,7 @@ readFromData();
 
 function router(req, res) {
   const url = req.url;
+  console.log("hhhhhh");
   if (req.method === "GET" && url.includes("/search")) {
     readBody(req, res);
   } else {
