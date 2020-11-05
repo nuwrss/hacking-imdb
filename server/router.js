@@ -20,13 +20,13 @@ readFromData();
 
 function router(req, res) {
   const url = req.url;
-  
+
   if (url === "/") {
-    homeHandler(req,res);
-   
+    homeHandler(req, res);
+
   } else {
     if (req.method === "GET" && url.includes("/search")) {
-      searchHandler(req, res,arrayMovie);
+      searchHandler(req, res, arrayMovie);
     } else {
       if (url.includes("src")) {
         resourcesHandler(req, res);
@@ -37,7 +37,6 @@ function router(req, res) {
     }
   }
 }
-
 
 
 module.exports = router;
