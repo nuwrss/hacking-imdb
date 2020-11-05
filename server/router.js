@@ -1,6 +1,5 @@
 const fs = require("fs");
 const path = require("path");
-const readline = require("line-reader");
 let arrayMovie = [];
 
 
@@ -18,6 +17,7 @@ readFromData();
 
 function router(req, res) {
   const url = req.url;
+  
   if (url === "/") {
     const filePath = path.join(__dirname, "..", "index.html");
     fs.readFile(filePath, (err, file) => {
@@ -59,12 +59,13 @@ function filesHandlerIndex(req, res) {
     ico: "image/x-icon"
   };
 
+  
+
   const url = req.url;
   const urlArray = url.split(".");
   const extensions = urlArray[1];
   const type = types[extensions];
   const filePath = path.join(__dirname, "..", url);
-  console.log(filePath);
   fs.readFile(filePath, (error, file) => {
     if (error) {
       console.log(error);
@@ -97,7 +98,7 @@ function movieNames(text) {
   if (text === null) {
     return [];
   }
-  if (text.length === 0) {
+  if (text.length === 0) { 
     return [];
   }
   const arr = arrayMovie.filter((movie) => {

@@ -23,7 +23,8 @@
     <div class="row">
       <div class="col-md-6 left-box">
         <div class="search-bar">
-          <form autocomplete="off" >
+          <form autocomplete="off"  onsubmit="return showMovieName(event)">
+            
             <div class="autocomplete" style="width:300px;">
               <input id="myInput" type="text" name="" placeholder="Search for a Movie ..">
             </div>
