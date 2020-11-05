@@ -1,6 +1,8 @@
 const fs = require("fs");
 const path = require("path");
-const readline = require("line-reader");
+const homeHandler = require("./handlers/homeHandler");
+const searchHandler = require("./handlers/searchHandler");
+const resourcesHandler = require("./handlers/resourcesHandler");
 let arrayMovie = [];
 
 
@@ -18,24 +20,16 @@ readFromData();
 
 function router(req, res) {
   const url = req.url;
+  
   if (url === "/") {
-    const filePath = path.join(__dirname, "..", "index.html");
-    fs.readFile(filePath, (err, file) => {
-      if (err) {
-        res.writeHead(404, { "content-type": "text/html" });
-        res.end("<h1>Not found!</h1>");
-      } else {
-        res.writeHead(200, { "content-type": "text/html" });
-        res.end(file);
-      }
-    })
-
+    homeHandler(req,res);
+   
   } else {
     if (req.method === "GET" && url.includes("/search")) {
-      readBody(req, res);
+      searchHandler(req, res,arrayMovie);
     } else {
       if (url.includes("src")) {
-        filesHandlerIndex(req, res);
+        resourcesHandler(req, res);
       } else {
         res.writeHead(404, { "content-type": "text/html" });
         res.end("<h1>Not found!</h1>");
@@ -44,6 +38,7 @@ function router(req, res) {
   }
 }
 
+<<<<<<< HEAD
 function filesHandlerIndex(req, res) {
 
 
@@ -89,22 +84,9 @@ function readBody(request, response) {
   let jsonStr = JSON.stringify(movieNames(name).slice(0, 6));
   response.writeHead(200, { "content-type": "application/json" });
   response.end(jsonStr);
+=======
+>>>>>>> 76b6d5de789d8fdd80c5f87e67da3fb4138fd878
 
-}
-
-// return the movies names that starts with the text 
-function movieNames(text) {
-  if (text === null) {
-    return [];
-  }
-  if (text.length === 0) {
-    return [];
-  }
-  const arr = arrayMovie.filter((movie) => {
-    return movie.toUpperCase().startsWith(text.toUpperCase());
-  });
-  return arr;
-}
 
 module.exports = router;
 
