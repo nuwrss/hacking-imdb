@@ -37,50 +37,50 @@ function router(req, res) {
       }
     })
 
-  }else{
-  if (req.method === "GET" && url.includes("/search")) {
-    readBody(req, res);
   } else {
-    if(url.includes("src")){
-      filesHandlerIndex(req,res);
+    if (req.method === "GET" && url.includes("/search")) {
+      readBody(req, res);
     } else {
-      res.writeHead(404, { "content-type": "text/html" });
-      res.end("<h1>Not found!</h1>");
+      if (url.includes("src")) {
+        filesHandlerIndex(req, res);
+      } else {
+        res.writeHead(404, { "content-type": "text/html" });
+        res.end("<h1>Not found!</h1>");
+      }
     }
-  }
   }
 }
 
-function filesHandlerIndex(req,res){
+function filesHandlerIndex(req, res) {
 
 
-const types = {
-  html : "text/html",
-  css : "text/css",
-  js : "application/javascript",
-  jpeg : "image/jpeg",
-  png : "image/png",
-  jpg : "image/jpg",
-  ico : "image/x-icon"
-};
+  const types = {
+    html: "text/html",
+    css: "text/css",
+    js: "application/javascript",
+    jpeg: "image/jpeg",
+    png: "image/png",
+    jpg: "image/jpg",
+    ico: "image/x-icon"
+  };
 
-const url = req.url;
-const urlArray = url.split(".");
-const extensions = urlArray[1];
-const type = types[extensions];
-const filePath = path.join(__dirname,"..",url);
-console.log(filePath);
-fs.readFile(filePath,(error,file)=>{
-  if(error){
-    console.log(error);
-    res.writeHead(404, { "content-type": "text/html" });
-    res.end("<h1>Not found!</h1>");
-  }else{
-   
-    res.writeHead(200, { "content-type": type });
-    res.end(file);
-  }
-})
+  const url = req.url;
+  const urlArray = url.split(".");
+  const extensions = urlArray[1];
+  const type = types[extensions];
+  const filePath = path.join(__dirname, "..", url);
+  console.log(filePath);
+  fs.readFile(filePath, (error, file) => {
+    if (error) {
+      console.log(error);
+      res.writeHead(404, { "content-type": "text/html" });
+      res.end("<h1>Not found!</h1>");
+    } else {
+
+      res.writeHead(200, { "content-type": type });
+      res.end(file);
+    }
+  })
 
 }
 function readBody(request, response) {
@@ -90,7 +90,7 @@ function readBody(request, response) {
   const name = data.get("name");
 
   console.log("the name :" + name);
-  let jsonStr = JSON.stringify(movieNames(name));
+  let jsonStr = JSON.stringify(movieNames(name).slice(0, 6));
   response.writeHead(200, { "content-type": "application/json" });
   response.end(jsonStr);
 
