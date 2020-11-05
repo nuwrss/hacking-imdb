@@ -20,13 +20,13 @@ readFromData();
 
 function router(req, res) {
   const url = req.url;
-  
+
   if (url === "/") {
-    homeHandler(req,res);
-   
+    homeHandler(req, res);
+
   } else {
     if (req.method === "GET" && url.includes("/search")) {
-      searchHandler(req, res,arrayMovie);
+      searchHandler(req, res, arrayMovie);
     } else {
       if (url.includes("src")) {
         resourcesHandler(req, res);
@@ -37,55 +37,6 @@ function router(req, res) {
     }
   }
 }
-
-<<<<<<< HEAD
-function filesHandlerIndex(req, res) {
-
-
-  const types = {
-    html: "text/html",
-    css: "text/css",
-    js: "application/javascript",
-    jpeg: "image/jpeg",
-    png: "image/png",
-    jpg: "image/jpg",
-    ico: "image/x-icon"
-  };
-
-  const url = req.url;
-  const urlArray = url.split(".");
-  const extensions = urlArray[1];
-  const type = types[extensions];
-  const filePath = path.join(__dirname, "..", url);
-  console.log(filePath);
-  fs.readFile(filePath, (error, file) => {
-    if (error) {
-      console.log(error);
-      res.writeHead(404, { "content-type": "text/html" });
-      res.end("<h1>Not found!</h1>");
-    } else {
-
-      res.writeHead(200, { "content-type": type });
-      res.end(file);
-    }
-  })
-
-}
-
-// reading the value of the name movie from the request
-
-function readBody(request, response) {
-
-  const body = request.url.split("?")[1];
-  const data = new URLSearchParams(body);
-  const name = data.get("name");
-
-
-  let jsonStr = JSON.stringify(movieNames(name).slice(0, 6));
-  response.writeHead(200, { "content-type": "application/json" });
-  response.end(jsonStr);
-=======
->>>>>>> 76b6d5de789d8fdd80c5f87e67da3fb4138fd878
 
 
 module.exports = router;
