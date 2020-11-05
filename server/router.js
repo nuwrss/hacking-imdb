@@ -1,21 +1,14 @@
 const fs = require("fs");
 const path = require("path");
-
 const readline = require("line-reader");
 let arrayMovie = [];
 
-const filepath = path.join(__dirname, "data.txt");
 
-const lineReader = require("line-reader");
-
+// read the data from the file data.txt
 function readFromData() {
-  // read contents of the file
+  const filepath = path.join(__dirname, "data.txt");
   const data = fs.readFileSync(filepath, "UTF-8");
-
-  // split the contents by new line
   const lines = data.split(/\r?\n/);
-
-  // print all lines
   lines.forEach((line) => {
     arrayMovie.push(line);
   });
@@ -83,6 +76,9 @@ function filesHandlerIndex(req, res) {
   })
 
 }
+
+// reading the value of the name movie from the request
+
 function readBody(request, response) {
 
   const body = request.url.split("?")[1];
@@ -96,6 +92,7 @@ function readBody(request, response) {
 
 }
 
+// return the movies names that starts with the text 
 function movieNames(text) {
   if (text === null) {
     return [];

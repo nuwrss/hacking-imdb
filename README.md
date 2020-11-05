@@ -4,8 +4,9 @@ In this website enables users to quickly find and select words from a list of su
 The list is dynamically generated from a pre-populated list of values after you type in search icon.
 
 <p align="center">
-  <img src="/src/img/Project.gif" width=720px height=360px />
+  <img src="/src/img/Project.png" width=720px height=360px />
 </p>
+<h2 align="center"><a href="https://hacking-imdb.herokuapp.com">TRY THE WEBSITE</h2>
 
 # Features:
 - Search for movies.
