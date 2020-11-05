@@ -32,10 +32,9 @@ function autocomplete(inp) {
         b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
         /*execute a function when someone clicks on the item value (DIV element):*/
         b.addEventListener("click", function (e) {
-          /*insert the value for the autocomplete text field:*/
+
           inp.value = this.getElementsByTagName("input")[0].value;
-          /*close the list of autocompleted values,
-          (or any other open lists of autocompleted values:*/
+
           closeAllLists();
         });
         a.appendChild(b);
@@ -83,8 +82,7 @@ function autocomplete(inp) {
 
 
   function closeAllLists(elmnt) {
-    /*close all autocomplete lists in the document,
-    except the one passed as an argument:*/
+
     var x = document.getElementsByClassName("autocomplete-items");
     for (var i = 0; i < x.length; i++) {
       if (elmnt != x[i] && elmnt != inp) {
@@ -99,7 +97,6 @@ function autocomplete(inp) {
 }
 
 
-/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
 autocomplete(document.getElementById("myInput"));
 
 function getMovieName(input, cb) {
@@ -114,3 +111,8 @@ function getMovieName(input, cb) {
 
     );
 }
+
+
+searchBtn.addEventListener("click", (e) => {
+  info.innerHTML = generateElement();
+});

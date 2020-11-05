@@ -5,6 +5,13 @@ body{
         background-repeat: no-repeat;
         
   }
+  
+  img{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    
+  }
 
   .topnav a.active {
     background-color: #2196F3;
@@ -14,8 +21,6 @@ body{
   .topnav input[type=text] {
     border: 1px solid #ccc;
   }
-
-  
   
   /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
   @media screen and (max-width: 600px) {
