@@ -85,7 +85,7 @@ function readBody(request, response) {
   const data = new URLSearchParams(body);
   const name = data.get("name");
 
-  console.log("the name :" + name);
+
   let jsonStr = JSON.stringify(movieNames(name).slice(0, 6));
   response.writeHead(200, { "content-type": "application/json" });
   response.end(jsonStr);
@@ -107,3 +107,4 @@ function movieNames(text) {
 }
 
 module.exports = router;
+

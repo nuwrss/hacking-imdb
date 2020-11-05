@@ -5,7 +5,13 @@ body{
         background-repeat: no-repeat;
         
   }
-  
+   h1{
+     color: white;
+     font-size: 60px;
+   }
+   .col-md-6 bleft-box{
+    padding-left: 40px;
+   }
   img{
     display: flex;
     align-items: center;

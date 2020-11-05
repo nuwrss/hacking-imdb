@@ -111,6 +111,10 @@ function getMovieName(input, cb) {
 }
 
 
-searchBtn.addEventListener("click", (e) => {
-  info.innerHTML = generateElement();
-});
+
+function shoMovieName(e) {
+  e.preventDefault();
+  document.getElementById("movieName").textContent = document.getElementById("myInput").value
+  console.log(document.getElementById("movieName").textContent)
+  return false;
+}
