@@ -3,6 +3,7 @@ const path = require("path");
 const homeHandler = require("./handlers/homeHandler");
 const searchHandler = require("./handlers/searchHandler");
 const resourcesHandler = require("./handlers/resourcesHandler");
+const getMovieDetailsHandler = require("./handlers/getMovieDetailsHandler");
 let arrayMovie = [];
 
 
@@ -28,6 +29,10 @@ function router(req, res) {
     if (req.method === "GET" && url.includes("/search")) {
       searchHandler(req, res, arrayMovie);
     } else {
+      if (url.includes("/get")) {
+        getMovieDetailsHandler(req, res);
+        return;
+      }
       if (url.includes("src")) {
         resourcesHandler(req, res);
       } else {
