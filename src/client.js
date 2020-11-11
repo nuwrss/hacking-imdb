@@ -119,27 +119,29 @@ function shoMovieName(e) {
 
   mainImg.src = "/src/img/progress.gif"
 
+  setTimeout(function () {
+    let val = document.getElementById("myInput").value;
+    fetch("/get?name=" + val)
+      .then(response => response.json())
+      .then(
+        data => {
 
-  let val = document.getElementById("myInput").value;
-  fetch("/get?name=" + val)
-    .then(response => response.json())
-    .then(
-      data => {
+          const result = data.results.filter(mov =>
+            mov.title.toUpperCase() === val.toUpperCase()
+          );
 
-        const result = data.results.filter(mov =>
-          mov.title.toUpperCase() === val.toUpperCase()
-        );
+          if (result.length === 0) {
+            mainImg.src = "/src/img/notav.png"
+          } else {
+            mainImg.src = "https://image.tmdb.org/t/p/w500/" + result[0].backdrop_path;
+          }
 
-        if (result.length === 0) {
-          mainImg.src = "/src/img/notav.png"
-        } else {
-          mainImg.src = "https://image.tmdb.org/t/p/w500/" + result[0].backdrop_path;
+
         }
 
+      );
+  }, 3000);
 
-      }
-
-    );
 
 
 
