@@ -100,16 +100,20 @@ function autocomplete(inp) {
 autocomplete(document.getElementById("myInput"));
 
 function getMovieName(input, cb) {
+  mainImg.style.visibility = 'hidden';
   fetch("/search?name=" + input)
     .then(response => response.json())
     .then(
       data => {
 
-        console.log(data)
+
         cb(data)
       }
 
-    );
+    ).catch(err => {
+      alert("error accured please try again !");
+
+    });
 }
 
 
@@ -117,7 +121,9 @@ function getMovieName(input, cb) {
 function shoMovieName(e) {
   e.preventDefault();
 
+
   mainImg.src = "/src/img/progress.gif"
+  mainImg.style.visibility = 'visible';
 
   setTimeout(function () {
     let val = document.getElementById("myInput").value;
@@ -139,6 +145,10 @@ function shoMovieName(e) {
 
         }
 
+      ).catch(error => {
+        alert("error accured please try again !")
+        mainImg.src = "/src/img/notav.png";
+      }
       );
   }, 3000);
 
