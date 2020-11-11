@@ -6,7 +6,7 @@ The list is dynamically generated from a pre-populated list of values after you 
 <p align="center">
   <img src="/src/img/Project.png" width=720px height=360px />
 </p>
-<h2 align="center"><a href="https://hacking-imdb.herokuapp.com">TRY THE WEBSITE</h2>
+<h2 align="center"><a href="https://hacking-imd-nuwrss.herokuapp.com/">TRY THE WEBSITE</h2>
 
 # Features:
 - Search for movies.
