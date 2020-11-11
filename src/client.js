@@ -121,7 +121,7 @@ function shoMovieName(e) {
 
 
   let val = document.getElementById("myInput").value;
-  fetch("http://localhost:4000/get?name=" + val)
+  fetch("/get?name=" + val)
     .then(response => response.json())
     .then(
       data => {
